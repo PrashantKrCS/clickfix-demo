@@ -1,51 +1,63 @@
-document.addEventListener("DOMContentLoaded", function(){
+document.addEventListener("DOMContentLoaded", function () {
 
-const checkbox = document.getElementById("verify")
-const status = document.getElementById("status")
+const checkbox = document.getElementById("verify");
+const status = document.getElementById("status");
 
-checkbox.addEventListener("click", function(){
+if (!checkbox) {
+    console.log("Checkbox not found");
+    return;
+}
 
-status.innerText="Checking your browser..."
+checkbox.addEventListener("change", function () {
 
-setTimeout(stage2,2000)
+status.innerText = "Checking your browser...";
 
-})
+setTimeout(stage2, 2000);
 
-})
+});
 
-function stage2(){
+});
+
+function stage2() {
 
 alert(
-"Verification Failed\n\n"+
-"Manual verification required.\n\n"+
-"1. Press Windows + R\n"+
-"2. Paste the verification command\n"+
+"Verification Failed\n\n" +
+"Manual verification required.\n\n" +
+"1. Press Windows + R\n" +
+"2. Paste the verification command\n" +
 "3. Press Enter"
-)
+);
 
-navigator.clipboard.writeText("echo ClickFix Demo")
+if (navigator.clipboard) {
+navigator.clipboard.writeText("echo ClickFix Attack demo");
+}
 
-showRun()
+showRun();
 
 }
 
-function showRun(){
+function showRun() {
 
-document.getElementById("runBox").classList.remove("hidden")
+const runBox = document.getElementById("runBox");
+const runInput = document.getElementById("runInput");
 
-document.getElementById("runInput").value="echo ClickFix Demo"
+if(runBox){
+runBox.classList.remove("hidden");
+}
+
+if(runInput){
+runInput.value = "echo Attack Successfully carried out";
+}
 
 }
 
-function closeRun(){
+function closeRun() {
 
-document.getElementById("runBox").classList.add("hidden")
+document.getElementById("runBox").classList.add("hidden");
 
 alert(
-"This was a ClickFix demo.\n\n"+
-"The attack works by convincing users to execute commands themselves."
-)
+"This was a ClickFix demo.\n\n" +
+"The attack works through social engineering."
+);
 
 }
-
-
