@@ -1,3 +1,5 @@
+document.addEventListener("DOMContentLoaded", function(){
+
 const checkbox = document.getElementById("verify")
 const status = document.getElementById("status")
 
@@ -7,7 +9,9 @@ status.innerText="Checking your browser..."
 
 setTimeout(stage2,2000)
 
-}
+})
+
+})
 
 function stage2(){
 
@@ -43,4 +47,5 @@ alert(
 )
 
 }
+
 
